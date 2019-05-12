@@ -10,6 +10,7 @@
 		06650D082288557300226AB6 /* ApolloService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06650D072288557300226AB6 /* ApolloService.swift */; };
 		06650D0C22885A0F00226AB6 /* CharacterClassQuery.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 06650D0B22885A0F00226AB6 /* CharacterClassQuery.graphql */; };
 		06650D0E2288C38900226AB6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06650D0D2288C38900226AB6 /* Images.xcassets */; };
+		06650D102288E14600226AB6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06650D0F2288E14600226AB6 /* Colors.xcassets */; };
 		06A63563228755D800CA6867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A63562228755D800CA6867 /* AppDelegate.swift */; };
 		06A63565228755D800CA6867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A63564228755D800CA6867 /* ViewController.swift */; };
 		06A63568228755D800CA6867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06A63566228755D800CA6867 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		06650D072288557300226AB6 /* ApolloService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloService.swift; sourceTree = "<group>"; };
 		06650D0B22885A0F00226AB6 /* CharacterClassQuery.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CharacterClassQuery.graphql; sourceTree = "<group>"; };
 		06650D0D2288C38900226AB6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		06650D0F2288E14600226AB6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		06A6355F228755D800CA6867 /* DnDCharacterGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDCharacterGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06A63562228755D800CA6867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06A63564228755D800CA6867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				06A6356B228755DB00CA6867 /* LaunchScreen.storyboard */,
 				06A6356E228755DB00CA6867 /* Info.plist */,
 				06650D0D2288C38900226AB6 /* Images.xcassets */,
+				06650D0F2288E14600226AB6 /* Colors.xcassets */,
 			);
 			path = DnDCharacterGenerator;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				06650D0E2288C38900226AB6 /* Images.xcassets in Resources */,
 				06A6356A228755DB00CA6867 /* Assets.xcassets in Resources */,
 				06A63568228755D800CA6867 /* Main.storyboard in Resources */,
+				06650D102288E14600226AB6 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

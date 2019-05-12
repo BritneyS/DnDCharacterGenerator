@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     func createGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = backgroundImageView.bounds
-        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.lightText.cgColor]
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor(named: "LightColor")!.cgColor]
         
         backgroundImageView.layer.addSublayer(gradientLayer)
         generateButton.layer.zPosition = 1
