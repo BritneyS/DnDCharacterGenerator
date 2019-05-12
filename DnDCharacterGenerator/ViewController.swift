@@ -22,7 +22,12 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var generateButton: UIButton! {
+        didSet { generateButton.layer.cornerRadius = 20 }
+    }
+    @IBOutlet weak var backgroundImageView: UIImageView! 
     
+    var gradientLayer: CAGradientLayer!
     let characterClassQuery = CharacterClassQuery()
     var allCharacterClasses: [String] = []
     
@@ -38,6 +43,20 @@ class ViewController: UIViewController {
                 print("⚔️ Classes: \(self.allCharacterClasses)")
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        createGradientLayer()
+    }
+    
+    func createGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = backgroundImageView.bounds
+        gradientLayer.colors = [UIColor.clear.cgColor, UIColor.lightText.cgColor]
+        
+        backgroundImageView.layer.addSublayer(gradientLayer)
+        generateButton.layer.zPosition = 1
     }
 
     @IBAction func generateButtonTapped(_ sender: UIButton) {

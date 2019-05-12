@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunlit-path-ian-tormo" translatesAutoresizingMaskIntoConstraints="NO" id="He6-3j-ccJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000091" height="896"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="600" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-ey-CrU">
                                 <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <subviews>
@@ -30,9 +33,9 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-hW-pES">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-hW-pES">
                                                 <rect key="frame" x="0.0" y="37.5" width="374" height="32.5"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.88366527289999997" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.060530272228689647" green="0.1031723509809095" blue="0.1455279926246632" alpha="0.60076474471830987" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -41,7 +44,7 @@
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yap-Hq-xwe">
                                         <rect key="frame" x="0.0" y="670" width="374" height="108"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.5714479496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.21383166688198635" green="0.0014901012205789409" blue="0.42100469559585496" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Generate Character"/>
@@ -54,19 +57,28 @@
                         </subviews>
                         <color key="backgroundColor" red="0.041549888600000001" green="0.070597892110000005" blue="0.099138743919999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="He6-3j-ccJ" secondAttribute="trailing" id="1qf-FE-PVc"/>
+                            <constraint firstItem="He6-3j-ccJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="242-hz-IE7"/>
                             <constraint firstItem="TPN-ey-CrU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="56h-ra-5DE"/>
+                            <constraint firstItem="He6-3j-ccJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ARk-xZ-71W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TPN-ey-CrU" secondAttribute="bottom" constant="20" id="GlQ-S9-5TI"/>
+                            <constraint firstAttribute="bottom" secondItem="He6-3j-ccJ" secondAttribute="bottom" id="KYB-q1-vZV"/>
                             <constraint firstItem="TPN-ey-CrU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eOo-yr-OfJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TPN-ey-CrU" secondAttribute="trailing" constant="20" id="sxg-6m-L0D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundImageView" destination="He6-3j-ccJ" id="ffz-w8-ksT"/>
                         <outlet property="classLabel" destination="Odp-hW-pES" id="CF6-lG-Bxg"/>
+                        <outlet property="generateButton" destination="Yap-Hq-xwe" id="3ik-3n-wED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="sunlit-path-ian-tormo" width="4863" height="3233"/>
+    </resources>
 </document>
