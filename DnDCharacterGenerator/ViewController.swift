@@ -24,21 +24,25 @@ class ViewController: UIViewController {
     @IBOutlet weak var classLabel: UILabel!
     
     let characterClassQuery = CharacterClassQuery()
+    var allCharacterClasses: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        classLabel.text = "\t"
         ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
             if error != nil {
                 print("⛔️ Error in fetching response: \(String(describing: error))")
             } else if let results = results?.data?.classResult?.allClasses?.compactMap({ $0 }) {
                 print(results)
-                let allCharacterClasses = results.map{ $0.name! }
-                print("⚔️ Classes: \(allCharacterClasses)")
-                self.classLabel.text = allCharacterClasses.reduce("", { $0 == "" ? $1 : $0 + "," + $1 })
+                self.allCharacterClasses = results.map{ $0.name! }
+                print("⚔️ Classes: \(self.allCharacterClasses)")
             }
         }
     }
 
+    @IBAction func generateButtonTapped(_ sender: UIButton) {
+        classLabel.text = allCharacterClasses.randomElement()
+    }
     
     
 

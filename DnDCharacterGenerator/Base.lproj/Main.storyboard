@@ -45,6 +45,9 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Generate Character"/>
+                                        <connections>
+                                            <action selector="generateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ys5-Gm-Xga"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
