@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let characterClassQuery = CharacterClassQuery()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
+            let results = results.jsonValue
+            print(results)
+        }
     }
 
 

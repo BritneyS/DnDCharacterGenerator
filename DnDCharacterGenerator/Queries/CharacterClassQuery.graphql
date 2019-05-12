@@ -1,0 +1,8 @@
+query CharacterClass {
+    result {
+        count
+        results {
+            name
+        }
+    }
+}
