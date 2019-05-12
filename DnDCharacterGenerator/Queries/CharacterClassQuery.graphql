@@ -1,7 +1,7 @@
 query CharacterClass {
-    result {
+    classResult {
         count
-        results {
+        allClasses {
             name
         }
     }

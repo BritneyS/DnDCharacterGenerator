@@ -4,7 +4,7 @@ import Apollo
 
 public final class CharacterClassQuery: GraphQLQuery {
   public let operationDefinition =
-    "query CharacterClass {\n  result {\n    __typename\n    count\n    results {\n      __typename\n      name\n    }\n  }\n}"
+    "query CharacterClass {\n  classResult {\n    __typename\n    count\n    allClasses {\n      __typename\n      name\n    }\n  }\n}"
 
   public init() {
   }
@@ -13,7 +13,7 @@ public final class CharacterClassQuery: GraphQLQuery {
     public static let possibleTypes = ["Query"]
 
     public static let selections: [GraphQLSelection] = [
-      GraphQLField("result", type: .object(Result.selections)),
+      GraphQLField("classResult", type: .object(ClassResult.selections)),
     ]
 
     public private(set) var resultMap: ResultMap
@@ -22,26 +22,26 @@ public final class CharacterClassQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(result: Result? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "result": result.flatMap { (value: Result) -> ResultMap in value.resultMap }])
+    public init(classResult: ClassResult? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "classResult": classResult.flatMap { (value: ClassResult) -> ResultMap in value.resultMap }])
     }
 
-    public var result: Result? {
+    public var classResult: ClassResult? {
       get {
-        return (resultMap["result"] as? ResultMap).flatMap { Result(unsafeResultMap: $0) }
+        return (resultMap["classResult"] as? ResultMap).flatMap { ClassResult(unsafeResultMap: $0) }
       }
       set {
-        resultMap.updateValue(newValue?.resultMap, forKey: "result")
+        resultMap.updateValue(newValue?.resultMap, forKey: "classResult")
       }
     }
 
-    public struct Result: GraphQLSelectionSet {
-      public static let possibleTypes = ["Result"]
+    public struct ClassResult: GraphQLSelectionSet {
+      public static let possibleTypes = ["ClassResult"]
 
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("count", type: .scalar(Int.self)),
-        GraphQLField("results", type: .list(.object(Result.selections))),
+        GraphQLField("allClasses", type: .list(.object(AllClass.selections))),
       ]
 
       public private(set) var resultMap: ResultMap
@@ -50,8 +50,8 @@ public final class CharacterClassQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(count: Int? = nil, results: [Result?]? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Result", "count": count, "results": results.flatMap { (value: [Result?]) -> [ResultMap?] in value.map { (value: Result?) -> ResultMap? in value.flatMap { (value: Result) -> ResultMap in value.resultMap } } }])
+      public init(count: Int? = nil, allClasses: [AllClass?]? = nil) {
+        self.init(unsafeResultMap: ["__typename": "ClassResult", "count": count, "allClasses": allClasses.flatMap { (value: [AllClass?]) -> [ResultMap?] in value.map { (value: AllClass?) -> ResultMap? in value.flatMap { (value: AllClass) -> ResultMap in value.resultMap } } }])
       }
 
       public var __typename: String {
@@ -72,16 +72,16 @@ public final class CharacterClassQuery: GraphQLQuery {
         }
       }
 
-      public var results: [Result?]? {
+      public var allClasses: [AllClass?]? {
         get {
-          return (resultMap["results"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [Result?] in value.map { (value: ResultMap?) -> Result? in value.flatMap { (value: ResultMap) -> Result in Result(unsafeResultMap: value) } } }
+          return (resultMap["allClasses"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [AllClass?] in value.map { (value: ResultMap?) -> AllClass? in value.flatMap { (value: ResultMap) -> AllClass in AllClass(unsafeResultMap: value) } } }
         }
         set {
-          resultMap.updateValue(newValue.flatMap { (value: [Result?]) -> [ResultMap?] in value.map { (value: Result?) -> ResultMap? in value.flatMap { (value: Result) -> ResultMap in value.resultMap } } }, forKey: "results")
+          resultMap.updateValue(newValue.flatMap { (value: [AllClass?]) -> [ResultMap?] in value.map { (value: AllClass?) -> ResultMap? in value.flatMap { (value: AllClass) -> ResultMap in value.resultMap } } }, forKey: "allClasses")
         }
       }
 
-      public struct Result: GraphQLSelectionSet {
+      public struct AllClass: GraphQLSelectionSet {
         public static let possibleTypes = ["Class"]
 
         public static let selections: [GraphQLSelection] = [

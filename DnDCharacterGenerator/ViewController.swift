@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
             if error != nil {
                 print("⛔️ Error in fetching response: \(String(describing: error))")
-            } else if let results = results?.data?.result?.results?.compactMap({ $0 }) {
+            } else if let results = results?.data?.classResult?.allClasses?.compactMap({ $0 }) {
                 print(results)
                 let allCharacterClasses = results.map{ $0.name! }
                 print("⚔️ Classes: \(allCharacterClasses)")
