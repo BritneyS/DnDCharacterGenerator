@@ -21,6 +21,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var classLabel: UILabel!
+    
     let characterClassQuery = CharacterClassQuery()
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
                 print(results)
                 let allCharacterClasses = results.map{ $0.name! }
                 print("⚔️ Classes: \(allCharacterClasses)")
+                self.classLabel.text = allCharacterClasses.reduce("", { $0 == "" ? $1 : $0 + "," + $1 })
             }
         }
     }
