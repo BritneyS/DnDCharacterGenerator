@@ -14,7 +14,7 @@ final class ApolloService {
     
     var client: ApolloClient
     
-    init(client: ApolloClient = ApolloClient(url: URL(string: "http://localhost:8000")!)) {
+    init(client: ApolloClient = ApolloClient(url: URL(string: "http://localhost:8000/graphql")!)) {
         self.client = client
     }
     

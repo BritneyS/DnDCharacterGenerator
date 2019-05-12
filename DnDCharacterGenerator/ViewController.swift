@@ -15,8 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
-            let results = results.jsonValue
-            print(results)
+            if let results = results?.data?.result?.jsonObject {
+                print(results)
+            }
         }
     }
 
