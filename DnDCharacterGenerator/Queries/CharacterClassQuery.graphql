@@ -1,0 +1,8 @@
+query CharacterClass {
+    classResult {
+        count
+        allClasses {
+            name
+        }
+    }
+}

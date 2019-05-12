@@ -12,12 +12,12 @@
         "description": "",
         "fields": [
           {
-            "name": "result",
+            "name": "classResult",
             "description": "",
             "args": [],
             "type": {
               "kind": "OBJECT",
-              "name": "Result",
+              "name": "ClassResult",
               "ofType": null
             },
             "isDeprecated": false,
@@ -36,7 +36,7 @@
             "deprecationReason": null
           },
           {
-            "name": "results",
+            "name": "allClasses",
             "description": "",
             "args": [],
             "type": {
@@ -59,7 +59,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "Result",
+        "name": "ClassResult",
         "description": "",
         "fields": [
           {
@@ -75,7 +75,7 @@
             "deprecationReason": null
           },
           {
-            "name": "results",
+            "name": "allClasses",
             "description": "",
             "args": [],
             "type": {
