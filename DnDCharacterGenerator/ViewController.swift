@@ -30,9 +30,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView! 
     
     var gradientLayer: CAGradientLayer!
-    let characterClassQuery = CharacterClassQuery()
+    let characterAttributeQuery = CharacterAttributesQuery()
     var isDataFetched: Bool = false
     var allCharacterClasses: [String] = []
+    var allCharacterRaces: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,15 +63,21 @@ class ViewController: UIViewController {
     }
     
     private func tryDataFetch() {
-        ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
+        ApolloService.shared.client.fetch(query: characterAttributeQuery) { results, error in
             if error != nil {
                 self.isDataFetched = false
                 print("⛔️ Error in fetching response: \(String(describing: error))")
-            } else if let results = results?.data?.classResult?.allClasses?.compactMap({ $0 }) {
+            } else {
                 self.isDataFetched = true
-                print(results)
-                self.allCharacterClasses = results.map{ $0.name! }
+                guard let classResults = results?.data?.classResult?.allClasses?.compactMap({ $0 }),
+                      let raceResults = results?.data?.raceResult?.allRaces?.compactMap({ $0 })
+                else { return }
+                
+                print(classResults)
+                self.allCharacterClasses = classResults.map{ $0.name! }
+                self.allCharacterRaces = raceResults.map{ $0.name! }
                 print("⚔️ Classes: \(self.allCharacterClasses)")
+                print("🧝🏾‍♀️ Races: \(self.allCharacterRaces)")
             }
         }
     }
