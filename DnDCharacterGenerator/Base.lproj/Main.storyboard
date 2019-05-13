@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunlit-path-ian-tormo" translatesAutoresizingMaskIntoConstraints="NO" id="He6-3j-ccJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000091" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-ey-CrU">
                                 <rect key="frame" x="20" y="64" width="374" height="503"/>
@@ -38,7 +39,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Odp-hW-pES">
                                                 <rect key="frame" x="0.0" y="38" width="374" height="62"/>
-                                                <color key="backgroundColor" red="0.060530272228689647" green="0.1031723509809095" blue="0.1455279926246632" alpha="0.60076474471830987" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="LabelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -59,7 +60,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfm-o2-iQO">
                                                 <rect key="frame" x="0.0" y="38" width="374" height="62"/>
-                                                <color key="backgroundColor" red="0.060530272230000001" green="0.103172351" blue="0.14552799259999999" alpha="0.60076474469999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="LabelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -81,7 +82,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ci3-Xc-ZZH">
                                                 <rect key="frame" x="0.0" y="38" width="374" height="65"/>
-                                                <color key="backgroundColor" red="0.060530272230000001" green="0.103172351" blue="0.14552799259999999" alpha="0.60076474469999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" name="LabelColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -97,7 +98,7 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yap-Hq-xwe">
                                 <rect key="frame" x="20" y="742" width="374" height="100"/>
-                                <color key="backgroundColor" red="0.21383166688198635" green="0.0014901012205789409" blue="0.42100469559585496" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="ButtonColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="XgW-lT-RbP"/>
                                 </constraints>
@@ -139,5 +140,11 @@
     </scenes>
     <resources>
         <image name="sunlit-path-ian-tormo" width="4863" height="3233"/>
+        <namedColor name="ButtonColor">
+            <color red="0.2370000034570694" green="0.0" blue="0.43900001049041748" alpha="0.69999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LabelColor">
+            <color red="0.046999998390674591" green="0.10499999672174454" blue="0.15000000596046448" alpha="0.60100001096725464" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
