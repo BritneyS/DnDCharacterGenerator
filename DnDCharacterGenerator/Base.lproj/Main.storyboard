@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414.00000000000091" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-ey-CrU">
-                                <rect key="frame" x="20" y="64" width="374" height="778"/>
+                                <rect key="frame" x="20" y="64" width="374" height="503"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lmC-wL-0ME" userLabel="Class Label Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
@@ -89,34 +89,37 @@
                                         </subviews>
                                         <viewLayoutGuide key="safeArea" id="ogb-Bg-iUh"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yap-Hq-xwe">
-                                        <rect key="frame" x="0.0" y="603" width="374" height="175"/>
-                                        <color key="backgroundColor" red="0.21383166688198635" green="0.0014901012205789409" blue="0.42100469559585496" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="175" id="XgW-lT-RbP"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Generate Character"/>
-                                        <connections>
-                                            <action selector="generateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ys5-Gm-Xga"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="3qb-qb-lUk" firstAttribute="top" secondItem="TPN-ey-CrU" secondAttribute="top" constant="200" id="hvc-XQ-gPK"/>
                                     <constraint firstItem="W6O-gs-Ea0" firstAttribute="top" secondItem="TPN-ey-CrU" secondAttribute="top" constant="400" id="uCm-gH-28H"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yap-Hq-xwe">
+                                <rect key="frame" x="20" y="742" width="374" height="100"/>
+                                <color key="backgroundColor" red="0.21383166688198635" green="0.0014901012205789409" blue="0.42100469559585496" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="XgW-lT-RbP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Generate Character"/>
+                                <connections>
+                                    <action selector="generateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ys5-Gm-Xga"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.041549888600000001" green="0.070597892110000005" blue="0.099138743919999994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="He6-3j-ccJ" secondAttribute="trailing" id="1qf-FE-PVc"/>
                             <constraint firstItem="He6-3j-ccJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="242-hz-IE7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yap-Hq-xwe" secondAttribute="trailing" constant="20" id="4Qj-ne-wcw"/>
                             <constraint firstItem="TPN-ey-CrU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="56h-ra-5DE"/>
                             <constraint firstItem="He6-3j-ccJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ARk-xZ-71W"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TPN-ey-CrU" secondAttribute="bottom" constant="20" id="GlQ-S9-5TI"/>
+                            <constraint firstItem="Yap-Hq-xwe" firstAttribute="top" secondItem="TPN-ey-CrU" secondAttribute="bottom" constant="175" id="GlQ-S9-5TI"/>
                             <constraint firstAttribute="bottom" secondItem="He6-3j-ccJ" secondAttribute="bottom" id="KYB-q1-vZV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Yap-Hq-xwe" secondAttribute="bottom" constant="20" id="LBb-MC-z96"/>
+                            <constraint firstItem="Yap-Hq-xwe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YIh-LY-ovU"/>
                             <constraint firstItem="TPN-ey-CrU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eOo-yr-OfJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TPN-ey-CrU" secondAttribute="trailing" constant="20" id="sxg-6m-L0D"/>
                         </constraints>
