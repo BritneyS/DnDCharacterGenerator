@@ -57,7 +57,7 @@ class ViewController: UIViewController {
             clearLabels()
         } else {
             classLabel.text = allCharacterClasses.randomElement()
-            raceLabel.text = "Half-Orc"
+            raceLabel.text = allCharacterRaces.randomElement()
             alignmentLabel.text = "Chaotic Neutral"
         }
     }
