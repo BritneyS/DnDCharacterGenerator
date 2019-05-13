@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunlit-path-ian-tormo" translatesAutoresizingMaskIntoConstraints="NO" id="He6-3j-ccJ">
-                                <rect key="frame" x="0.0" y="0.0" width="414.00000000000091" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="TPN-ey-CrU">
                                 <rect key="frame" x="20" y="64" width="374" height="503"/>
@@ -126,9 +126,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="alignmentLabel" destination="Ci3-Xc-ZZH" id="lTE-Ka-1h1"/>
                         <outlet property="backgroundImageView" destination="He6-3j-ccJ" id="ffz-w8-ksT"/>
                         <outlet property="classLabel" destination="Odp-hW-pES" id="CF6-lG-Bxg"/>
                         <outlet property="generateButton" destination="Yap-Hq-xwe" id="3ik-3n-wED"/>
+                        <outlet property="raceLabel" destination="kfm-o2-iQO" id="U6g-ga-Ja1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

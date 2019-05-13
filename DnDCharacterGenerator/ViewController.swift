@@ -22,6 +22,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var classLabel: UILabel!
+    @IBOutlet weak var raceLabel: UILabel!
+    @IBOutlet weak var alignmentLabel: UILabel!
     @IBOutlet weak var generateButton: UIButton! {
         didSet { generateButton.layer.cornerRadius = 20 }
     }
@@ -34,6 +36,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         classLabel.text = "\t"
+        raceLabel.text = "\t"
+        alignmentLabel.text = "\t"
         ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
             if error != nil {
                 print("⛔️ Error in fetching response: \(String(describing: error))")
@@ -61,6 +65,8 @@ class ViewController: UIViewController {
 
     @IBAction func generateButtonTapped(_ sender: UIButton) {
         classLabel.text = allCharacterClasses.randomElement()
+        raceLabel.text = "Half-Orc"
+        alignmentLabel.text = "Chaotic Neutral"
     }
     
     
