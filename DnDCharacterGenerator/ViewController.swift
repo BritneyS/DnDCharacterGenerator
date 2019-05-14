@@ -34,9 +34,28 @@ class ViewController: UIViewController {
     var isDataFetched: Bool = false
     var allCharacterClasses: [String] = []
     var allCharacterRaces: [String] = []
+    var allCharacterAlignments: [String] {
+        var alignments: [String] = []
+        let morals = ["Good", "Neutral", "Evil"]
+        let states = ["Lawful", "Neutral", "Chaotic"]
+        
+        for moral in morals {
+            for state in states {
+                if "\(state) \(moral)" == "Neutral Neutral" {
+                    let trueNeutral = "True Neutral"
+                    alignments.append(trueNeutral)
+                } else {
+                    alignments.append("\(state) \(moral)")
+                }
+            }
+        }
+        
+        return alignments
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("🧙🏾‍♀️ \(allCharacterAlignments)")
         clearLabels()
         tryDataFetch()
     }
@@ -58,7 +77,7 @@ class ViewController: UIViewController {
         } else {
             classLabel.text = allCharacterClasses.randomElement()
             raceLabel.text = allCharacterRaces.randomElement()
-            alignmentLabel.text = "Chaotic Neutral"
+            alignmentLabel.text = allCharacterAlignments.randomElement()
         }
     }
     
