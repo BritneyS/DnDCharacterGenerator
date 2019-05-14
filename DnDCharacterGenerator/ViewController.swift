@@ -30,12 +30,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView! 
     
     var gradientLayer: CAGradientLayer!
-    let characterClassQuery = CharacterClassQuery()
+    let characterAttributeQuery = CharacterAttributesQuery()
     var isDataFetched: Bool = false
     var allCharacterClasses: [String] = []
+    var allCharacterRaces: [String] = []
+    var allCharacterAlignments: [String] {
+        var alignments: [String] = []
+        let morals = ["Good", "Neutral", "Evil"]
+        let states = ["Lawful", "Neutral", "Chaotic"]
+        
+        for moral in morals {
+            for state in states {
+                if "\(state) \(moral)" == "Neutral Neutral" {
+                    let trueNeutral = "True Neutral"
+                    alignments.append(trueNeutral)
+                } else {
+                    alignments.append("\(state) \(moral)")
+                }
+            }
+        }
+        
+        return alignments
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("🧙🏾‍♀️ \(allCharacterAlignments)")
         clearLabels()
         tryDataFetch()
     }
@@ -56,21 +76,27 @@ class ViewController: UIViewController {
             clearLabels()
         } else {
             classLabel.text = allCharacterClasses.randomElement()
-            raceLabel.text = "Half-Orc"
-            alignmentLabel.text = "Chaotic Neutral"
+            raceLabel.text = allCharacterRaces.randomElement()
+            alignmentLabel.text = allCharacterAlignments.randomElement()
         }
     }
     
     private func tryDataFetch() {
-        ApolloService.shared.client.fetch(query: characterClassQuery) { results, error in
+        ApolloService.shared.client.fetch(query: characterAttributeQuery) { results, error in
             if error != nil {
                 self.isDataFetched = false
                 print("⛔️ Error in fetching response: \(String(describing: error))")
-            } else if let results = results?.data?.classResult?.allClasses?.compactMap({ $0 }) {
+            } else {
                 self.isDataFetched = true
-                print(results)
-                self.allCharacterClasses = results.map{ $0.name! }
+                guard let classResults = results?.data?.classResult?.allClasses?.compactMap({ $0 }),
+                      let raceResults = results?.data?.raceResult?.allRaces?.compactMap({ $0 })
+                else { return }
+                
+                print(classResults)
+                self.allCharacterClasses = classResults.map{ $0.name! }
+                self.allCharacterRaces = raceResults.map{ $0.name! }
                 print("⚔️ Classes: \(self.allCharacterClasses)")
+                print("🧝🏾‍♀️ Races: \(self.allCharacterRaces)")
             }
         }
     }

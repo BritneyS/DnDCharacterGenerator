@@ -1,0 +1,15 @@
+query CharacterAttributes {
+    classResult {
+        count
+        allClasses {
+            name
+        }
+    }
+
+    raceResult {
+        count
+        allRaces {
+            name
+        }
+    }
+}
